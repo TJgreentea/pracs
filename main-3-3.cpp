@@ -1,9 +1,15 @@
 #include <iostream>
-extern double weighted_average(int array[], int n);
+#include <map>
+using namespace std;
 
-int main() {
-    int array[] = {1, 2, 1, 4, 1, 3};
-    int n = sizeof(array) / sizeof(array[0]);
-    std::cout << "Weighted average of the array is: " << weighted_average(array, n) << std::endl;
-    return 0;
+double weighted_average(int array[], int n) {
+    if (n < 1) return 0.0;
+    
+    double sum = 0.0;
+    for (int i = 0; i < n; ++i) {
+        sum += array[i]; // Summing all elements
+    }
+    
+    return sum / n; // Dividing by the total number of elements
 }
+
