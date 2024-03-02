@@ -1,23 +1,20 @@
 #include <iostream>
 using namespace std;
 
-// Function prototype to ensure the main function knows about is_fanarray
+// Forward declaration of the function
 bool is_fanarray(int array[], int n);
 
 int main() {
+    // Test cases
     int array1[] = {1, 2, 3, 2, 1};
-    int array2[] = {2, 4, 4, 2};
-    int array3[] = {1, 2, 1, 2, 1};
-    int array4[] = {1, 3, 5, 4, 2};
-    int array5[] = {5};
-    int array6[] = {1, 2, 3, 4, 5};
+    int n1 = sizeof(array1) / sizeof(array1[0]);
 
-    cout << "Array1 is a fan array? " << (is_fanarray(array1, 5) ? "Yes" : "No") << endl;
-    cout << "Array2 is a fan array? " << (is_fanarray(array2, 4) ? "Yes" : "No") << endl;
-    cout << "Array3 is a fan array? " << (is_fanarray(array3, 5) ? "Yes" : "No") << endl;
-    cout << "Array4 is a fan array? " << (is_fanarray(array4, 5) ? "Yes" : "No") << endl;
-    cout << "Array5 is a fan array? " << (is_fanarray(array5, 1) ? "Yes" : "No") << endl;
-    cout << "Array6 is a fan array? " << (is_fanarray(array6, 5) ? "Yes" : "No") << endl;
+    int array2[] = {1, 3, 5, 4, 2};
+    int n2 = sizeof(array2) / sizeof(array2[0]);
+
+    // Calling the function with test arrays
+    cout << "Array 1 is a fan array: " << is_fanarray(array1, n1) << endl;
+    cout << "Array 2 is a fan array: " << is_fanarray(array2, n2) << endl;
 
     return 0;
 }
