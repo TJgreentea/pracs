@@ -1,9 +1,12 @@
-#include <iostream>
-extern int min_element(int array[], int n);
+#include<iostream>
 
-int main() {
-    int array[] = {7, 2, 3, 1, 5};
-    int n = sizeof(array) / sizeof(array[0]);
-    std::cout << "Minimum element: " << min_element(array, n) << std::endl;
+
+extern int* readnumbers(); // This matches your function call
+extern void hexDigits(int *numbers, int length);
+
+int main(){
+    int *numbers = readnumbers(); // Calls the external function to get the array of numbers
+    hexDigits(numbers, 10); // Calls the external function to print hex digits
+    delete[] numbers; // Cleans up dynamically allocated memory
     return 0;
 }

@@ -1,11 +1,14 @@
 #include <iostream>
-using namespace std;
-
-int array_sum(int array[], int n) {
-    int sum = 0;
-    if (n < 1) return 0;
-    for (int i = 0; i < n; i++) {
-        sum += array[i];
+int *readnumbers(){
+    int *numbers=new int[10];
+    for(int i=0;i<10;i++){
+       std::cin>>numbers[i];
+     return numbers;  
     }
-    return sum;
 }
+void printNumbers(int *numbers,int length){
+    for (int i=0; i<length;i++){
+        std::cout <<i<<" "<<numbers[i]<<std::endl;
+    }
+   }
+  

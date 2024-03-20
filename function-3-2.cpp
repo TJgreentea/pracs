@@ -1,10 +1,29 @@
-#include <algorithm> // For std::sort
 #include <iostream>
-using namespace std;
 
-int median_array(int array[], int n) {
-    if (n < 1 || n % 2 == 0) return 0;
+int *readnumbers(int length){
+    int *numbers = new int[length];
+    for(int i = 0; i < length; i++){
+        std::cin >> numbers[i];
+    }
+    return numbers;
+}
 
-    std::sort(array, array + n);
-    return array[n / 2];
+bool equalsArray(int *numbers1, int *numbers2, int length){
+    if (length < 1){
+        return false; // Assuming you want to return false for arrays of non-positive length.
+    }
+    for (int i = 0; i < length; ++i){
+        if(numbers1[i] != numbers2[i]){
+            return false;
+        }
+    }
+    return true; // Moved this outside the loop to ensure all elements are compared.
+}
+
+int *reverseArray(int *numbers1, int length){
+    int *reversed = new int[length];
+    for (int i = 0; i < length; ++i){
+        reversed[i] = numbers1[length - 1 - i];
+    }
+    return reversed;
 }
