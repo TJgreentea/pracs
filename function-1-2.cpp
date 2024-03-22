@@ -1,14 +1,13 @@
-#include <iostream>
+#include "Person.h"
 
-// Function declaration
-double array_mean(int array[], int n);
-
-// Function implementation
-double array_mean(int array[], int n) {
-    if (n < 1) return 0.0;
-    int sum = 0;
-    for (int i = 0; i < n; i++) {
-        sum += array[i];
+PersonList createPersonList(int n) {
+    PersonList list;
+    list.numPeople = n;
+    list.people = new Person[n];
+    for (int i = 0; i < n; ++i) {
+        list.people[i].name = "Jane Doe";
+        list.people[i].age = 1;
     }
-    return static_cast<double>(sum) / n; // Cast sum to double for accurate division
+    return list;
 }
+

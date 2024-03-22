@@ -1,12 +1,18 @@
+// main-1-1.cpp
 #include <iostream>
-using namespace std;
-
-// Function declaration
-int array_sum(int array[], int n);
+#include "person.h"
+Person* createPersonArray(int n);
 
 int main() {
-    int array[] = {1, 2, 3, 4, 5};
-    int n = sizeof(array) / sizeof(array[0]);
-    cout << "Sum: " << array_sum(array, n) << endl;
+    int n = 5; 
+    Person* persons = createPersonArray(n);
+
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Person " << i + 1 << ": Name = " << persons[i].name << ", Age = " << persons[i].age << std::endl;
+    }
+
+    
+    delete[] persons;
+
     return 0;
 }
